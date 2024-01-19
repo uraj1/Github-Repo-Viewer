@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Repo Viewer </title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="userName">
+        <input type="text"  class="username-input" id="newUsername" placeholder="Enter GitHub username">
+        <button id="changeUsernameBtn" onclick="changeUsername()">Change Username</button>
+    </div>
+    
+    <div class="container">
+        
+        <div id="loader" class="spinner-container">
+        </div>
+
+        <div id="profile">
+            <img id="avatar" alt="GitHub Avatar" class="circular-frame">
+            <h1 id="name"></h1>
+            <div id="profileInfo">
+                <p id="profileLink"></p>
+                <p id="bio"></p>
+                <p id="location"></p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="repo">
+
+        <div class="search-container">
+            <input type="text" id="repoSearch" placeholder="Search repositories..." oninput="searchRepositories()">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+
+        <div id="repositories" class="grid-container"></div>
+        <div class="pagination">
+            <button id="prevBtn" onclick="getRepositories('prev')">Prev</button>
+            <button id="nextBtn" onclick="getRepositories('next')">Next</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
